@@ -25,11 +25,12 @@ build: $(OBJ)
 
 # Executes the binary
 run: clean build
-	./$(EXE)
+	@echo "------------------"
+	@./$(EXE) ||:
 
 # Deletes the binary and object files
 clean:
-	rm -f $(EXE) ./bin/*
+	@rm -f $(EXE) ./bin/* ||:
 	echo "Deleted the binary and object files"
 
 # Automatic coding style, in my personal style
